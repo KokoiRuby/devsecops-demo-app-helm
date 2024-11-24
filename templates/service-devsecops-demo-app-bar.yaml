@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devsecops-demo-app-bar
+  labels:
+    project: devsecops
+    demo-app: bar
+spec:
+  type: ClusterIP
+  selector:
+    project: devsecops
+    demo-app: bar
+  ports:
+    - port: 3322
+      targetPort: 3322

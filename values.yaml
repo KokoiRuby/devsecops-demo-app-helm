@@ -1,0 +1,9 @@
+foo:
+  replicaCount: 1
+  image:
+    tag: v0.1.0
+
+bar:
+  replicaCount: 1
+  image:
+    tag: v0.1.0

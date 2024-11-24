@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devsecops-demo-app-foo
+  labels:
+    project: devsecops
+    demo-app: foo
+spec:
+  type: ClusterIP
+  selector:
+    project: devsecops
+    demo-app: foo
+  ports:
+    - port: 2233
+      targetPort: 2233

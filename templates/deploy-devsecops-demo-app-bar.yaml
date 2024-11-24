@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devsecops-demo-app-bar
+  labels:
+    project: devsecops
+    demo-app: bar
+spec:
+  replicas: {{ .Values.bar.replicaCount }}
+  selector:
+    matchLabels:
+      project: devsecops
+      demo-app: bar
+  template:
+    metadata:
+      labels:
+        project: devsecops
+        demo-app: bar
+    spec:
+      containers:
+        - name: devsecops-demo-app-bar
+          image: "yukanyan/devsecops-demo-app-bar:{{ .Values.bar.image.tag }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3322

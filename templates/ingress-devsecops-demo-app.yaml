@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: devsecops-demo-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: demo-app.devsecops.yukanyan.us.kg
+    - http:
+        paths:
+          - path: /foo
+            pathType: Prefix
+            backend:
+              service:
+                name: devsecops-demo-app-foo
+                port:
+                  number: 2233
+          - path: /bar
+            pathType: Prefix
+            backend:
+              service:
+                name: devsecops-demo-app-bar
+                port:
+                  number: 3322
