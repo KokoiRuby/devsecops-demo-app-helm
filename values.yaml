@@ -1,3 +1,5 @@
+host: demo-app-dev.devsecops.yukanyan.us.kg
+
 foo:
   replicaCount: 1
   image:
