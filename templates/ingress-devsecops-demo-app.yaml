@@ -11,14 +11,14 @@ spec:
     - host: {{ .Values.host }}
     - http:
         paths:
-          - path: /foo
+          - path: /{{ .Values.env }}/foo
             pathType: Prefix
             backend:
               service:
                 name: devsecops-demo-app-foo
                 port:
                   number: 2233
-          - path: /bar
+          - path: /{{ .Values.env }}/bar
             pathType: Prefix
             backend:
               service:
