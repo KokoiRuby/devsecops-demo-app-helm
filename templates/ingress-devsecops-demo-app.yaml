@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: devsecops-demo-app
+  name: devsecops-demo-app-{{ .Values.env }}
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -11,14 +11,14 @@ spec:
     - host: {{ .Values.host }}
     - http:
         paths:
-          - path: /{{ .Values.env }}/foo
+          - path: /foo
             pathType: Prefix
             backend:
               service:
                 name: devsecops-demo-app-foo
                 port:
                   number: 2233
-          - path: /{{ .Values.env }}/bar
+          - path: /bar
             pathType: Prefix
             backend:
               service:
