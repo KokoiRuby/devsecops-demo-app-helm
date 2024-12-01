@@ -1,0 +1,8 @@
+helm:
+  parameters:
+  - name: foo.image.name
+    value: harbor.devsecops.yukanyan.us.kg/devsecops-demo-app/foo
+    forcestring: true
+  - name: foo.image.tag
+    value: v0.1.3
+    forcestring: true
