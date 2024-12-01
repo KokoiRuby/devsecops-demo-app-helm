@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: devsecops-demo-app-foo
-          image: "{{ .Values.global.registryUrl }}/{{ .Values.global.repository }}/{{ .Values.foo.image.name }}:{{ .Values.foo.image.tag }}"
+          image: "{{ .Values.foo.image.name }}:{{ .Values.foo.image.tag }}"
           imagePullPolicy: Always
           ports:
             - containerPort: 2233
